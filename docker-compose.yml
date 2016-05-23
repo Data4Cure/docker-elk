@@ -4,13 +4,16 @@ elasticsearch:
   ports:
     - "9200:9200"
     - "9300:9300"
+  volumes:
+    - /data/elk/elastic:/usr/share/elasticsearch/data
 logstash:
   image: logstash:latest
-  command: logstash -f /etc/logstash/conf.d/logstash.conf
+  command: logstash -f /etc/logstash/conf.d/logstash.conf -v
   volumes:
     - ./logstash/config:/etc/logstash/conf.d
+    - /data/elk-test/tls/:/etc/pki/tls/
   ports:
-    - "5000:5000"
+    - "5044:5044"
   links:
     - elasticsearch
 kibana:
