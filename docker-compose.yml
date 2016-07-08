@@ -14,6 +14,7 @@ logstash:
     - /data/elk-test/tls/:/etc/pki/tls/
   ports:
     - "5044:5044"
+    - "15044:15044"
   links:
     - elasticsearch
 kibana:
