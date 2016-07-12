@@ -1,6 +1,6 @@
 #!/bin/bash
 
-HOST_ADDR=localhost:9201
+HOST_ADDR=localhost:9200
 REPO_ID=dev_4
 BUCKET=d4c-dev4
 REGION=us-east-1
