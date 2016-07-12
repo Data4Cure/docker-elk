@@ -1,0 +1,10 @@
+network.host: 0.0.0.0
+
+searchguard.ssl.transport.keystore_filepath: node-0-keystore.jks
+searchguard.ssl.transport.keystore_password: NODE_0_PASS_PLACEHOLDER
+searchguard.ssl.transport.truststore_filepath: truststore.jks
+searchguard.ssl.transport.truststore_password: KS_PASS_PLACEHOLDER
+searchguard.ssl.transport.enforce_hostname_verification: false
+
+searchguard.authcz.admin_dn:
+  - "CN=admin,OU=client,O=client,L=Test,C=DE"
