@@ -1,0 +1,1 @@
+38 03 * * * /data/elk-test/docker-elk/elasticsearch/d4c_scripts/backup.sh backup-snapshot $(date +\%Y-\%m-\%d-\%H\%M\%S) >>/data/elk-test/docker-elk/backup.log 2>&1

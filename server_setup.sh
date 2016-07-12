@@ -7,10 +7,10 @@ echo "Installing docker compose"
 curl -L https://github.com/docker/compose/releases/download/1.7.1/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 
-echo "Start ELK setup"
+echo "Starting ELK setup"
 docker-compose up -d
 
-echo "Prepare tunnel configuration"
+echo "Preparing tunnel configuration"
 echo -e "Match User tunnel\n"\
         "  AllowAgentForwarding no\n"\
         "  ForceCommand echo 'This account can only be used for tunnel creation'"\
@@ -22,3 +22,6 @@ mkdir -p /home/tunnel/.ssh/
 cat tunnelsshkey.pub >> /home/tunnel/.ssh/authorized_keys
 chown tunnel:tunnel /home/tunnel/.ssh/authorized_keys
 echo "Use tunnelsshkey on client servers to build ssh tunnels"
+
+echo "Setting up cron job for elasticsearch backups"
+crontab crontab
