@@ -8,13 +8,13 @@ elasticsearch:
     - ./elasticsearch/d4c_scripts:/usr/share/elasticsearch/d4c_scripts
     - ./elasticsearch/config:/usr/share/elasticsearch/config
     - ./elasticsearch/sgconfig:/usr/share/elasticsearch/plugins/search-guard-2/sgconfig
-    - /data/elk/elastic:/usr/share/elasticsearch/data
+    - /encrypted_1/ubuntu/data/elk/elastic:/usr/share/elasticsearch/data
 logstash:
   image: logstash:2.3.4-1
   command: logstash -f /etc/logstash/conf.d/logstash.conf -v
   volumes:
     - ./logstash/config:/etc/logstash/conf.d
-    - /data/elk-test/tls/:/etc/pki/tls/
+    - /encrypted_1/ubuntu/data/elk-test/tls/:/etc/pki/tls/
   ports:
     - "5044:5044"
     - "15044:15044"
