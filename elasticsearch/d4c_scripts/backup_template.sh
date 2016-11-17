@@ -5,8 +5,6 @@ REPO_ID=dev_4
 BUCKET=d4c-dev4
 REGION=us-east-1
 BUCKET_PREFIX=elk-backup
-AWS_ACCESS_KEY_ID=x
-AWS_SECRET_KEY=x
 ELASTIC_CREDENTIALS=x:x
 
 case "$1" in
@@ -16,9 +14,8 @@ case "$1" in
             \"settings\": {
                 \"bucket\": \"$BUCKET\",
                 \"region\": \"$REGION\",
-                \"base_path\": \"$BUCKET_PREFIX\",
-                \"access_key\": \"$AWS_ACCESS_KEY_ID\",
-                \"secret_key\": \"$AWS_SECRET_KEY\"
+                \"server_side_encryption\": true,
+                \"base_path\": \"$BUCKET_PREFIX\"
             }
         }"
     ;;
