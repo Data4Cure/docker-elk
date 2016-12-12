@@ -10,7 +10,7 @@ elasticsearch:
     - ./elasticsearch/sgconfig:/usr/share/elasticsearch/plugins/search-guard-2/sgconfig
     - /encrypted_1/ubuntu/data/elk/elastic:/usr/share/elasticsearch/data
   environment:
-    - ES_HEAP_SIZE=2g
+    - ES_HEAP_SIZE=4g
   log_opt:
     max-file: "4"
     max-size: "25m"
