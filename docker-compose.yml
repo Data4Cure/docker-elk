@@ -9,6 +9,8 @@ elasticsearch:
     - ./elasticsearch/config:/usr/share/elasticsearch/config
     - ./elasticsearch/sgconfig:/usr/share/elasticsearch/plugins/search-guard-2/sgconfig
     - /encrypted_1/ubuntu/data/elk/elastic:/usr/share/elasticsearch/data
+  environment:
+    - ES_HEAP_SIZE=2g
 logstash:
   image: logstash:2.3.4-1
   command: logstash -f /etc/logstash/conf.d/logstash.conf -v
