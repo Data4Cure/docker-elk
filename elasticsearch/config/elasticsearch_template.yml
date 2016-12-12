@@ -8,3 +8,5 @@ searchguard.ssl.transport.enforce_hostname_verification: false
 
 searchguard.authcz.admin_dn:
   - "CN=admin,OU=client,O=client,L=Test,C=DE"
+
+indices.fielddata.cache.size:  40%
