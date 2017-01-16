@@ -12,7 +12,7 @@ echo -e "[Unit]\n"\
 "After=network.target\n"\
 "[Service]\n"\
 "User=root\n"\
-"ExecStart=/usr/bin/autossh -M 0 -N -L 5045:localhost:5044 -L 15044:localhost:15044 -o \"ServerAliveInterval 30\" -o \"ServerAliveCountMax 2\" -o \"StrictHostKeyChecking=no\" -o \"BatchMode=yes\" -i /home/ubuntu/tunnelsshkey tunnel@$2\n"\
+"ExecStart=/usr/bin/autossh -M 0 -N -L 5045:localhost:5044 -L 172.18.0.1:5045:localhost:5044 -L 15044:localhost:15044 -L 172.18.0.1:15044:localhost:15044 -o \"ServerAliveInterval=30\" -o \"ServerAliveCountMax=2\" -o \"StrictHostKeyChecking=no\" -o \"BatchMode=yes\" -i /home/ubuntu/tunnelsshkey tunnel@$2\n"\
 "Restart=on-failure\n"\
 "RestartSec=30\n"\
 "[Install]\n"\
